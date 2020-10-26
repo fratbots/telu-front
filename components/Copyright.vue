@@ -1,7 +1,5 @@
 <template>
-  <span class="copyright">
-    &copy; telu, {{ new Date().getFullYear() }}
-  </span>
+  <span class="copyright"> &copy; telu, {{ new Date().getFullYear() }} </span>
 </template>
 
 <style scoped>

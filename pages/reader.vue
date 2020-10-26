@@ -9,7 +9,13 @@
     <section v-else>
       <div v-if="loading"><p>Loading...</p></div>
 
-      <el-card v-else v-for="story in stories" :key="story.id" shadow="hover" class="story">
+      <el-card
+        v-else
+        v-for="story in stories"
+        :key="story.id"
+        shadow="hover"
+        class="story"
+      >
         <h2>{{ story.title }}</h2>
         <div class="author">
           <p class="el-icon-user-solid">{{ story.author }}</p>
@@ -20,9 +26,12 @@
             disabled
             show-score
             text-color="#ff9900"
-            score-template="{value} points">
+            score-template="{value} points"
+          >
           </el-rate>
-          <span class="downloads">{{ story.games_completed }} journeys completed</span>
+          <span class="downloads"
+            >{{ story.games_completed }} journeys completed</span
+          >
         </div>
         <p>
           {{ story.description }}
@@ -50,17 +59,17 @@
 import Vue from 'vue'
 
 interface Story {
-  id: number,
-  author: string,
-  title: string,
-  description: string,
-  rating: number,
-  games_completed: number,
+  id: number
+  author: string
+  title: string
+  description: string
+  rating: number
+  games_completed: number
 }
 
 export default Vue.extend({
-  data () {
-    let stories: Story[] = [];
+  data() {
+    let stories: Story[] = []
 
     return {
       loading: true,
@@ -68,15 +77,15 @@ export default Vue.extend({
       error: false,
     }
   },
-  mounted () {
+  mounted() {
     this.$axios
       .get<Story[]>('/scenarios')
-      .then(response => (this.stories = response.data)).
-      catch(error => {
-        console.log(error);
+      .then((response) => (this.stories = response.data))
+      .catch((error) => {
+        console.log(error)
         this.error = true
       })
-      .finally(() => this.loading = false)
-  }
+      .finally(() => (this.loading = false))
+  },
 })
 </script>

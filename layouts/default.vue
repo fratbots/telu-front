@@ -1,14 +1,14 @@
 <template>
   <el-container id="app">
     <el-header>
-        <el-row>
-          <el-col :span=4 class="logo">
-            <Logo />
-          </el-col>
-          <el-col :span=20>
-            <Menu />
-          </el-col>
-        </el-row>
+      <el-row>
+        <el-col :span="4" class="logo">
+          <Logo />
+        </el-col>
+        <el-col :span="20">
+          <Menu />
+        </el-col>
+      </el-row>
     </el-header>
     <el-main>
       <Nuxt />
@@ -21,7 +21,7 @@
 
 <style>
 html {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
